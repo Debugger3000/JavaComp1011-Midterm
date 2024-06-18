@@ -1,5 +1,6 @@
 package ca.georgiancollege.javamidterm;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -80,6 +81,17 @@ public class StudentViewController  {
 
     }
 
+
+    private String getStudents(){
+
+        ObservableList<Student> lister = tableView.getItems();
+
+
+        return Integer.toString(lister.size());
+
+
+    }
+
     @FXML
     void initialize() throws Exception {
         areaCodeComboBox.getItems().add("All");
@@ -109,6 +121,9 @@ public class StudentViewController  {
         updateTable(DataStore.getStudentData());
 
 
+        //part 2c
+        String numberOfStudents = getStudents();
+        numOfStudentsLabel.setText(numberOfStudents);
 
 
 
