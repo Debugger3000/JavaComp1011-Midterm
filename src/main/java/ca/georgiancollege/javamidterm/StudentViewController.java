@@ -83,6 +83,16 @@ public class StudentViewController  {
     @FXML
     void initialize() throws Exception {
         areaCodeComboBox.getItems().add("All");
+        areaCodeComboBox.getItems().add("705");
+        areaCodeComboBox.getItems().add("905");
+        areaCodeComboBox.getItems().add("416");
+        areaCodeComboBox.getItems().add("519");
+        areaCodeComboBox.getItems().add("647");
+
+
+
+
+
 
 
         //set cell factories to grab class data
@@ -97,6 +107,10 @@ public class StudentViewController  {
 
         //
         updateTable(DataStore.getStudentData());
+
+
+
+
 
     }
 }

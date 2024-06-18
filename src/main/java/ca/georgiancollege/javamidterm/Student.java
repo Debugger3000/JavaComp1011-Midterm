@@ -1,5 +1,8 @@
 package ca.georgiancollege.javamidterm;
 
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -51,6 +54,16 @@ public class Student {
         //telephone number
         if(phoneNumberValid(phoneNumber)){
             this.phoneNumber = phoneNumber;
+
+            //SortedList<String> areaCodes = new SortedList<String>();
+            //ArrayList<String> areaCode = new ArrayList<String>();
+            //add area code to list
+            //areaCode.add(phoneNumber.substring(0,3));
+
+
+
+
+
         }
         else{
             this.phoneNumber = "void";
