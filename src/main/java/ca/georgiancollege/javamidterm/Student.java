@@ -1,5 +1,6 @@
 package ca.georgiancollege.javamidterm;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Student {
@@ -17,6 +18,9 @@ public class Student {
     private ArrayList<String> provinces = new ArrayList<String>();
 
 
+    public Student(){
+
+    }
 
     public Student(int studentNumber, String firstName, String lastName, String phoneNumber, String address, String province, int average, String major){
 
@@ -87,13 +91,30 @@ public class Student {
         else{
             this.major = major;
         }
+    }
 
 
 
+    public void queryForData() throws Exception{
 
+        DBUtility dataBase = new DBUtility();
 
+        String queryStatement = "Select studentNum,firstName,lastName,telephone,homeaddress,province,avgGrade,major from students order by studentNum";
+
+        ArrayList<Student> listOfStudents = dataBase.queryAll(queryStatement);
+
+        DataStore.setStudentData(listOfStudents);
 
     }
+
+
+
+
+
+
+
+
+
 
     private boolean phoneNumberValid(String phoneNumber){
 

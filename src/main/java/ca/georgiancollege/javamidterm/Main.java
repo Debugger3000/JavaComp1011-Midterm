@@ -9,7 +9,12 @@ import java.io.IOException;
 
 public class Main extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws Exception {
+
+
+        Student yeah = new Student();
+        yeah.queryForData();
+
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("student-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Students!");
