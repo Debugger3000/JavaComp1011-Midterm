@@ -115,10 +115,20 @@ public class StudentViewController  {
         for(int i = 0; i<filterStack.size();i++){
 
             //is an area code so remove
-            if(filterStack.get(i).length() == 3){
-                filterStack.remove(i);
+            if(filterStack.get(i).equalsIgnoreCase("Province") || filterStack.get(i).equalsIgnoreCase("Average")){
+
             }
+            else{
+                filterStack.remove(i);
+
+            }
+
+//            if(filterStack.get(i).length() == 4){
+//            }
         }
+        //update table
+        updateTable("filter");
+
     }
 
     //
@@ -335,7 +345,7 @@ public class StudentViewController  {
             else if (areaCodeComboBox.getSelectionModel().getSelectedItem().equalsIgnoreCase("705")){
                 try {
                     undoAreaCode();
-                    applyFilter1("705");
+                    applyFilter1("705-");
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
@@ -343,7 +353,7 @@ public class StudentViewController  {
             else if (areaCodeComboBox.getSelectionModel().getSelectedItem().equalsIgnoreCase("905")) {
                 try {
                     undoAreaCode();
-                    applyFilter1("905");
+                    applyFilter1("905-");
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }            }
@@ -359,7 +369,7 @@ public class StudentViewController  {
             else if (areaCodeComboBox.getSelectionModel().getSelectedItem().equalsIgnoreCase("519")) {
                 try {
                     undoAreaCode();
-                    applyFilter1("519");
+                    applyFilter1("519-");
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
@@ -367,7 +377,7 @@ public class StudentViewController  {
             else if (areaCodeComboBox.getSelectionModel().getSelectedItem().equalsIgnoreCase("647")) {
                 try {
                     undoAreaCode();
-                    applyFilter1("647");
+                    applyFilter1("647-");
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }            }
